@@ -29,7 +29,7 @@
       content
     </div>
     <div class="postit-labels">
-      <span class="label" > {{postIt.labels[1]}}</span>
+      <span class="label" > {{postIt.labels}}</span>
     </div>
     </div>
   </div>

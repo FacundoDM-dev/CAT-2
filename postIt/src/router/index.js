@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import posTit from '../components/posTit.vue'
+import PostItList from '../components/PostItList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: posTit
+      component: PostItList
     },
     
   ]
