@@ -42,11 +42,10 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-  postIt: Object, // Propiedad para recibir el objeto de la tarjeta Post-It
+  postIt: Object,
 });
 const deletePostIt = () => {
-  // Implementa la lógica para eliminar el Post-It si es necesario
-  // Puedes usar props.postIt para acceder a los datos del Post-It.
+
 };
 </script>
 

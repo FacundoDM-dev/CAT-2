@@ -45,7 +45,7 @@ const postItArray = ref([
     labels: ["Work", "Project", "Urgent"],
     featured: false,
   },
-  // Agrega más tarjetas Post-It según sea necesario
+ 
 ]);
 </script>
 
