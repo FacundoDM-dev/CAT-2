@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue"
-import PosTit from './PosTit.vue';
+import { ref } from "vue";
+import PosTit from "./PosTit.vue";
 
 const postItArray = ref([
   {
@@ -45,15 +45,13 @@ const postItArray = ref([
     labels: ["Work", "Project", "Urgent"],
     featured: false,
   },
- 
 ]);
 </script>
 
 <style scoped>
 .postit-list {
-display: grid;
-width: 100%;
-grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-
 </style>
