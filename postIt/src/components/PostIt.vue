@@ -1,8 +1,8 @@
 <template>
-  <div class="postit">
+  <div class="postit" :class="{ 'featured': props.postIt.featured }">
     <button class="delete-postit" @click="deletePostIt">
-      delete
-      <img :src="props.postIt.image" alt="" />
+      <!-- <img :src="props.postIt.image" alt="Delete-Image" /> -->
+      <i class="fa-solid fa-trash"></i>
     </button>
     <h2 class="postit-title">{{ props.postIt.title }}</h2>
     <div class="postit-image">
@@ -11,11 +11,13 @@
 
     <div class="postit-info">
       <div class="postit-date">
-        <img :src="props.postIt.image" alt="Date" />
+        <i class="fa-regular fa-calendar"></i>
+        <!-- <img :src="" alt="Date" /> -->
         <span>{{ props.postIt.date }}</span>
       </div>
       <div class="postit-time">
-        <img :src="props.postIt.image" alt="Time" />
+        <i class="fa-regular fa-clock"></i>
+        <!-- <img :src="" alt="Time" /> -->
         <span>{{ props.postIt.time }}</span>
       </div>
       <div class="postit-priority">
@@ -24,6 +26,8 @@
         </span>
       </div>
       <div class="postit-due-date">
+        <i class="fa-regular fa-flag"></i>
+        <!-- <img :src="" alt="Due Date" /> -->
         <span>{{ props.postIt.dueDate }}</span>
       </div>
       <div class="postit-content">
@@ -39,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+
 
 const props = defineProps({
   postIt: Object,
@@ -66,6 +70,10 @@ const deletePostIt = () => {};
 .postit-image {
   margin: 1rem 0;
 }
+
+.postit-image img {
+  width: 350px;
+}
 .postit-info {
   display: flex;
   flex-wrap: wrap;
@@ -83,9 +91,9 @@ const deletePostIt = () => {};
   width: 50%;
   margin-bottom: 0.5rem;
 }
-.postit-date img,
-.postit-time img,
-.postit-due-date img {
+.postit-date i,
+.postit-time i,
+.postit-due-date i {
   width: 1rem;
   margin-right: 0.5rem;
 }

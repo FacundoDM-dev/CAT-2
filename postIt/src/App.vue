@@ -5,8 +5,8 @@ import PostItList from "./components/PostItList.vue";
 </script>
 
 <template>
-  <div>
-    <div>Post-It Manager</div>
+  <div class="main">
+    <!-- <div>Post-It Manager</div> -->
     <SearchBar />
     <FilterBar />
     <PostItList />
@@ -14,6 +14,7 @@ import PostItList from "./components/PostItList.vue";
 </template>
 
 <style scoped>
+
 
 
 </style>
