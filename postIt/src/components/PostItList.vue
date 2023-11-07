@@ -1,18 +1,32 @@
 <template>
   <div class="postit-list">
-    <PosTit v-for="postIt in postItArray" :key="postIt.id" :postIt="postIt" />
+    <PostIt
+      v-for="postIt in postItArray"
+      :key="postIt.id"
+      :title="postIt.title"
+      :image="postIt.image"
+      :date="postIt.date"
+      :time="postIt.time"
+      :dueDate="postIt.dueDate"
+      :dueTime="postIt.dueTime"
+      :priority="postIt.priority"
+      :content="postIt.content"
+      :featured="postIt.featured"
+      :labels="postIt.labels"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import PosTit from "./PosTit.vue";
+import PostIt from "./PostIt.vue";
 
 const postItArray = ref([
   {
     id: 1,
     title: "Important Meeting",
-    image: "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406dg",
+    image:
+      "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406dg",
     date: "2023-10-30",
     time: "09:00 AM",
     dueDate: "2023-11-15",
@@ -24,7 +38,8 @@ const postItArray = ref([
   {
     id: 2,
     title: "Grocery List",
-    image: "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
+    image:
+      "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
     date: "2023-10-30",
     time: "10:00 AM",
     dueDate: "2023-10-31",
@@ -36,7 +51,8 @@ const postItArray = ref([
   {
     id: 3,
     title: "Project Deadline",
-    image: "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
+    image:
+      "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
     date: "2023-10-31",
     time: "02:00 PM",
     dueDate: "2023-11-10",

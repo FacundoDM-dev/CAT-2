@@ -1,40 +1,36 @@
 <template>
-  <div class="postit" :class="{ 'featured': props.postIt.featured }">
+  <div :class="['postit', { featured: props.featured }]">
     <button class="delete-postit" @click="deletePostIt">
-      <!-- <img :src="props.postIt.image" alt="Delete-Image" /> -->
-      <i class="fa-solid fa-trash"></i>
+      <img src="../assets/delete-button.svg" alt="Delete Icon" />
     </button>
-    <h2 class="postit-title">{{ props.postIt.title }}</h2>
+    <h2 class="postit-title">{{ props.title }}</h2>
     <div class="postit-image">
-      <img :src="props.postIt.image" alt="Post-It Image" />
+      <img :src="props.image" alt="Post-It Image" />
     </div>
 
     <div class="postit-info">
       <div class="postit-date">
-        <i class="fa-regular fa-calendar"></i>
-        <!-- <img :src="" alt="Date" /> -->
-        <span>{{ props.postIt.date }}</span>
+        <img src="../assets/date.svg" alt="Date Icon" />
+        <span>{{ props.date }}</span>
       </div>
       <div class="postit-time">
-        <i class="fa-regular fa-clock"></i>
-        <!-- <img :src="" alt="Time" /> -->
-        <span>{{ props.postIt.time }}</span>
+        <img src="../assets/time.svg" alt="Time Icon" />
+        <span>{{ props.time }}</span>
       </div>
       <div class="postit-priority">
-        <span class="priority" :class="props.postIt.priority">
-          {{ props.postIt.priority }}
+        <span class="priority" :class="[props.priority]">
+          {{ props.priority }}
         </span>
       </div>
       <div class="postit-due-date">
-        <i class="fa-regular fa-flag"></i>
-        <!-- <img :src="" alt="Due Date" /> -->
-        <span>{{ props.postIt.dueDate }}</span>
+        <img src="../assets/due-date.svg" alt="Due Date Icon" />
+        <span>{{ props.dueDate }}</span>
       </div>
       <div class="postit-content">
-        {{ props.postIt.content }}
+        {{ props.content }}
       </div>
       <div class="postit-labels">
-        <span class="label" v-for="label in props.postIt.labels" :key="label">
+        <span v-for="label in props.labels" :key="label" class="label">
           {{ label }}
         </span>
       </div>
@@ -43,11 +39,20 @@
 </template>
 
 <script setup>
-
-
 const props = defineProps({
-  postIt: Object,
+  id: Number,
+  title: String,
+  image: String,
+  date: String,
+  time: String,
+  dueDate: String,
+  dueTime: String,
+  priority: String,
+  content: String,
+  labels: Array,
+  featured: Boolean,
 });
+
 const deletePostIt = () => {};
 </script>
 

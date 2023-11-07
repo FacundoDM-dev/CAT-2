@@ -1,21 +1,28 @@
 <template>
   <div class="modal">
     <div class="modal__overlay"></div>
+
     <div class="modal__content">
       <div class="modal__header">
-        <slot name="header"></slot>
-        <button class="modal__close">
-          <img src="" alt="Close Button" />
+        <slot name="header"> </slot>
+
+        <button @click="closeModal" class="modal__close">
+          <img src="../assets/close-button.svg" alt="Close Button" />
         </button>
+
         <div class="modal__body">
-          <slot name="body"></slot>
+          <slot name="body"> </slot>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const closeModal = () => {
+  // handle event to implement close functionality
+};
+</script>
 
 <style scoped>
 .modal {
